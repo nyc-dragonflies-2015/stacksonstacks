@@ -8,3 +8,7 @@ Who are the members of the group?
 * [Marco](https://github.com/mcardacci)
 * [Julia](https://github.com/julia-castro)
 * [Ross](https://github.com/grapefruitricky)
+
+First pass at schema:
+![schema](https://trello.com/c/RvHW8xuB/2-picture)
+
