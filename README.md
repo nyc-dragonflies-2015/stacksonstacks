@@ -10,5 +10,5 @@ Who are the members of the group?
 * [Ross](https://github.com/grapefruitricky)
 
 First pass at schema:
-![schema](https://trello.com/c/RvHW8xuB/2-picture)
+![schema](https://drive.google.com/file/d/0B_cIcskqNEAfMkhVLVBERVVILTA/view?usp=sharing)
 
