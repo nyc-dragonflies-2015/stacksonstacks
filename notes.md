@@ -1,9 +1,11 @@
-###workflow
- >--work on Friday night
+###Work Agreement
+ >--work on Friday night (YAY!)
  
- >--work about 9 hours on Saturday
+ >--work about 12 hours on Saturday, starting around 9AM.
  
  >--hopefully Sunday off
+ 
+ >--When we can't agree on something then we'll call a vote. We're going to keep this democratic.  There are three of us, so there shouldn't be any ties.
 
 
 ###roles
