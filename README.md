@@ -9,6 +9,6 @@ Who are the members of the group?
 * [Julia](https://github.com/julia-castro)
 * [Ross](https://github.com/grapefruitricky)
 
-First pass at schema:
+First pass at 
 [schema](https://drive.google.com/file/d/0B_cIcskqNEAfMkhVLVBERVVILTA/view?usp=sharing)
 
