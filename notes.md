@@ -1,6 +1,8 @@
 ###workflow
  >--work on Friday night
+ 
  >--work about 9 hours on Saturday
+ 
  >--hopefully Sunday off
 
 
