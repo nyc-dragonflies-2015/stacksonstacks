@@ -15,6 +15,7 @@ your default person for Merge Requests:
 > --Marco --> Ross
 
 > --Ross --> Julia
+
 don't be afraid to reach out to another if your go to person is busy.
 
 ###other
