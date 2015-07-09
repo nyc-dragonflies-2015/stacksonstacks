@@ -102,7 +102,6 @@ ActiveRecord::Schema.define(version: 20150708234352) do
   add_foreign_key "favorite_questions", "users"
   add_foreign_key "question_tags", "questions"
   add_foreign_key "question_tags", "tags"
-  add_foreign_key "questions", "answers"
   add_foreign_key "questions", "users"
   add_foreign_key "votes", "users"
 end
