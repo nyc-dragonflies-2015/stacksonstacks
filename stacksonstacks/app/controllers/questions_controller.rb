@@ -8,9 +8,6 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
-    @tag = Tag.new
-
   end
 
   def create

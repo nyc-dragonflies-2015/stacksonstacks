@@ -1,17 +1,19 @@
-<%= form_for @question do |f| %>
-  Title <%= f.text_field :title, :placeholder => "What's your programming question? Be specific.", :size => 100 %>
+<%= form_tag ('/questions') do %>
+  Title <%= text_field_tag 'title', '', size: 96 %>
+  <br>
+  <br>
+  <%=text_area_tag 'body', nil, rows: 10, cols: 100 %>
+  <%= submit_tag 'Post Your Question' %>
   <br>
   <br>
   <br>
-  <%= f.text_field :body, :size => 106 %>
+  Tags <%= text_field_tag 'tags', '', size: 96 %>
+  <br>
+  <br>
+  <%= submit_tag "Post Your Question" %>
 <% end %>
-<br>
-<br>
-<br>
-<br>
-<%= form_for @tag do |f| %>
-Tags <%= f.text_field :name, :placeholder => "Please separate tags by commas.", :size => 100 %>
-  <% end %>
+
+
 
 
 
