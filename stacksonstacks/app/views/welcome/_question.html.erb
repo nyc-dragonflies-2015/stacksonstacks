@@ -6,15 +6,20 @@
     <%=question.answers.count%>
   </div>
   <div class="questionelement question-title">
-    <%= link_to "#{question.title}", question_path(question) %>
+    <%= question.title %>
+    <% # link_to "#{question.title}" , question_path(question) %>
   </div>
-  <div class ="questionelement question-tags">
-    <% question.tags.each do |tag|%>
-      <%= link_to "#{tag.title}", tag %>
+  <div class ="question-tags">
+    <% question.tags.each do |tag| %>
+      <li>
+        <%= tag.name %>
+      </li>
     <% end %>
   </div>
   <div class ="questionelement question-user">
-    <%= link_to "#{question.user.username}", user_path(question.user) %>
+    <%= question.user.username %>
+    <% # link_to "#{question.user.username}" , user_path(question.user) %>
   </div>
+
 
 </div>
