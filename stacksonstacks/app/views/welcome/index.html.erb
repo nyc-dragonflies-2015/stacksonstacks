@@ -1,0 +1,20 @@
+
+
+<div id="navbar">
+  <div class='navbarlink'><a href="questions">Questions</a></div>
+  <div class='navbarlink'><a href="tags">Tags</a></div>
+  <div class='navbarlink'><a href="users">Users</a></div>
+  <div class='navbarlink'><a href="unanswered">Unanswered</a></div>
+  <div class='navbarlink'><a href="questions/new">Ask a Question</a></div>
+</div>
+
+
+<div class="subheader">
+  <h2>Recent Questions</h2>
+  <div class="question-list">
+    <% @questions.each do |question| %>
+      <%= render partial: 'question', locals: {question: question} %>
+    <%end%>
+  </div>
+
+</div>
