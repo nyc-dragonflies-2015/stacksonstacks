@@ -1,0 +1,9 @@
+<h3> <%= @question.title %> </h3>
+<br>
+<%= @question.body %>
+<br>
+<br>
+<%= form_for @comment do |f| %>
+  <%= f.text_field :body, :size => 100 %>
+  <%= f.submit "Add Comment" %>
+<% end %>
