@@ -1,0 +1,26 @@
+<div class="question">
+  <div class="questionsummary question-votes">
+    <%=question.votes.count%>
+  </div>
+  <div class="questionsummary question-answers">
+    <%=question.answers.count%>
+  </div>
+  <div class="questionsummary question-title question-group">
+    <%= question.title %>
+    <% # link_to "#{question.title}" , question_path(question) %>
+  </div>
+  <div class ="questionsummary question-tags question-group">
+    <% question.tags.each do |tag| %>
+      <li>
+        <%= tag.name %>
+      </li>
+    <% end %>
+  </div>
+  <div class ="questionsummary question-user question-group">
+    <%= time_ago_in_words(question.created_at) %> ago
+    <%= question.user.username %>
+    <% # link_to "#{question.user.username}" , user_path(question.user) %>
+  </div>
+
+
+</div>

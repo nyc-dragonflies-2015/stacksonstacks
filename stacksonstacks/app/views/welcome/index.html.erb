@@ -1,0 +1,17 @@
+
+
+
+
+
+<div class="subheader">
+  <h2>Recent Questions</h2>
+  <div class="question-list">
+    <% @questions.each do |question| %>
+      <%= render partial: 'question', locals: {question: question} %>
+    <%end%>
+  </div>
+  <br/><br/><br/>
+  <div>
+    <%= will_paginate @questions %>
+  </div>
+</div>
