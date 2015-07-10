@@ -32,10 +32,12 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @comment = Comment.new
-    @comments = Comment.all
+    @comments = @question.comments
     @answer = Answer.new
-    @answers = Answer.all
+    @answers = @question.answers
     # @user = User.find(session[:user_id])
+    # !!!!!!!!  comment form needs this   <%= f.hidden_field :user_id, value: @user.id %>
+    # !!!!!!!!  answer form needs this   <%= f.hidden_field :user_id, value: @user.id %>
   end
 
   def edit
