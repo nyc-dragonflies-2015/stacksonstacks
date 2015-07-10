@@ -33,27 +33,3 @@ end
 Question.all.each do |q|
   q.tags << Tag.all[rand(300)]
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
