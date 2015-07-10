@@ -8,13 +8,25 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @id = session[:user_id]
   end
 
   def create
-
-  end
-
-  def create
+    # p params
+    @question = Question.new(question_params)
+    if @question.save
+      tags = params['tags'].split(",").collect(&:strip)
+      tags.each do |word|
+        if Tag.exists?(name: word)
+          @question.tags << Tag.find_by(name: word)
+        else
+          @question.tags.create(name: word)
+        end
+      end
+        redirect_to questions_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -34,5 +46,4 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :body, :user_id)
   end
-
 end
