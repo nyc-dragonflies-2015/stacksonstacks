@@ -1,0 +1,18 @@
+<%= form_for @question do |f| %>
+  Title <%= f.text_field :title, :placeholder => "What's your programming question? Be specific.", :size => 100 %>
+  <br>
+  <br>
+  <br>
+  <%= f.text_field :body, :size => 106 %>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+<%= form_for @tag do |f| %>
+Tags <%= f.text_field :name, :placeholder => "Please separate tags by commas.", :size => 100 %>
+  <% end %>
+
+
+
+

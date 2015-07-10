@@ -14,7 +14,10 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    #update attributes on question to add user_id
+
+  end
+
+  def create
   end
 
   def show
@@ -32,7 +35,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :body)
+    params.require(:question).permit(:title, :body, :user_id)
   end
 
 end
