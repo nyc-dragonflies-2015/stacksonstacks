@@ -26,9 +26,7 @@ don't be afraid to reach out to another if your go to person is busy.
 
 ###git workflow
 1. `git checkout -b my_feature`
-
 2. Work
-
   1.  [Spike][]: a timeboxed investigation
   2.  Test
   3.  Write a Test-driven implementation
