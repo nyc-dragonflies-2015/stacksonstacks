@@ -16,5 +16,6 @@
       <%= render partial: 'question', locals: {question: question} %>
     <%end%>
   </div>
-
+  <br/><br/><br/>
+  <%= will_paginate @questions %>
 </div>
