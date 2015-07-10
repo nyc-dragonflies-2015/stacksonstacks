@@ -46,6 +46,23 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    @id = session[:user_id]
+    @question = Question.find(params[:id])
+    @question.question_tags.clear
+    @question.assign_attributes(question_params)
+    if @question.update_attributes
+      tags = params['tags'].split(",").collect(&:strip)
+      tags.each do |word|
+        if Tag.exists?(name: word)
+          @question.tags << Tag.find_by(name: word)
+        else
+          @question.tags.create(name: word)
+        end
+      end
+        redirect_to questions_path
+    else
+      render :edit
+    end
   end
 
   def destroy
