@@ -5,18 +5,19 @@
   <div class="questionelement question-answers">
     <%=question.answers.count%>
   </div>
-  <div class="questionelement question-title">
+  <div class="questionsummary question-title">
     <%= question.title %>
     <% # link_to "#{question.title}" , question_path(question) %>
   </div>
-  <div class ="question-tags">
+  <div class ="questionsummaryquestion-tags">
     <% question.tags.each do |tag| %>
       <li>
         <%= tag.name %>
       </li>
     <% end %>
   </div>
-  <div class ="questionelement question-user">
+  <div class ="questionsummary question-user">
+    <%= time_ago_in_words(question.created_at) %> ago
     <%= question.user.username %>
     <% # link_to "#{question.user.username}" , user_path(question.user) %>
   </div>
