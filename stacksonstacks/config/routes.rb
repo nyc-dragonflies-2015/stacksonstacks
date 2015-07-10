@@ -56,5 +56,6 @@ Rails.application.routes.draw do
   get 'login' =>  'session#index'
   post 'login' => 'session#create'
   delete 'logout' => 'session#destroy'
+  get 'signup' => 'user#signup'
   resources :user
 end
