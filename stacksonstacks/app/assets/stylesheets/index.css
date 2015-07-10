@@ -1,0 +1,13 @@
+.question {
+  display: block;
+  border-bottom: 1px solid black
+}
+.questionelement {
+  display: inline-block;
+  width: 2em;
+  float: left;
+}
+.questionsummary {
+  display: block;
+  float: right;
+}
