@@ -55,5 +55,6 @@ Rails.application.routes.draw do
   #   end
   get 'login' =>  'session#index'
   post 'login' => 'session#create'
+  delete 'logout' => 'session#destroy'
   resources :user
 end
