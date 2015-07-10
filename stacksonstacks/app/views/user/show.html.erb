@@ -1,0 +1,29 @@
+<h1>User Profile</h1>
+<p>picture</p>
+
+<% if session[:user_id] %>
+  <%= link_to "Logout", logout_path, method: :delete %>
+<% end %>
+<br><br>
+
+<h2>Questions:</h2>
+<% @user.questions.each do |q| %>
+  <p>Title:</p>  <%= q.title %> <br>
+  <p>Body: </p>  <%= q.body %> <br><br>
+<% end %>
+<br><br>
+
+<h2>Answers:</h2>
+<% @user.answers.each do |a| %>
+  <%= a.body %> <br>
+<% end %>
+<br><br>
+
+<h2>Comments:</h2>
+<% @user.comments.each do |c| %>
+  <%= c.body %> <br>
+<% end %>
+
+
+
+
