@@ -1,2 +1,21 @@
-<h1>User Profile Page</h1>
+<h1>User Profile</h1>
 <p>picture</p>
+<br><br>
+<h2>Questions:</h2>
+<% @user.questions.each do |q| %>
+  <%= q %>
+<% end %>
+<br><br>
+<h2>Answers:</h2>
+<% @user.answers.each do |a| %>
+  <%= a %>
+<% end %>
+<br><br>
+<h2>Comments:</h2>
+<% @user.comments.each do |c| %>
+  <%= c %>
+<% end %>
+
+
+
+

@@ -8,7 +8,7 @@ class SessionController < ApplicationController
     @user = User.find_by(username: session_params[:username])
     if @user && @user.password == params[:password]
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to root_path
     else
       flash[:notice] = "There was something wrong with your submission"
       redirect_to :back
