@@ -30,6 +30,12 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @question = Question.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.all
+    @answer = Answer.new
+    @answers = Answer.all
+    # @user = User.find(session[:user_id])
   end
 
   def edit
