@@ -1,19 +1,19 @@
 <div class="question">
-  <div class="question-votes">
+  <div class="questionelement question-votes">
     <%=question.votes.count%>
   </div>
-  <div class="question-answers">
+  <div class="questionelement question-answers">
     <%=question.answers.count%>
   </div>
-  <div class="question-title">
+  <div class="questionelement question-title">
     <%= link_to "#{question.title}", question_path(question) %>
   </div>
-  <div class ="question-tags">
+  <div class ="questionelement question-tags">
     <% question.tags.each do |tag|%>
       <%= link_to "#{tag.title}", tag %>
     <% end %>
   </div>
-  <div>
+  <div class ="questionelement question-user">
     <%= link_to "#{question.user.username}", user_path(question.user) %>
   </div>
 
