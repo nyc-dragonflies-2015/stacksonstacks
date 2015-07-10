@@ -66,6 +66,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    @question.find(params[:id]).destroy
   end
 
   private
