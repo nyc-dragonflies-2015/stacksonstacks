@@ -13,7 +13,13 @@
   <div class='navbarlink'><a href="users">Users</a></div>
   <div class='navbarlink'><a href="unanswered">Unanswered</a></div>
   <div class='navbarlink'><a href="questions/new">Ask a Question</a></div>
-</div>
+  <% if logged_in? %>
+    <%= link_to 'Logout', logout_path, method: :delete %><br/>
+    <%= link_to 'User Page', user_path(current_user) %>
+  <% else %>
+    <%= link_to 'login', login_path %>
+  <% end %>
+  </div>
 
 <%= yield %>
 
