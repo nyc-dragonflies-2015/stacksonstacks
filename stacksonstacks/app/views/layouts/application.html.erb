@@ -7,15 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="stack-exchange-nav">
-      <% if logged_in? %>
-        <%= link_to 'Logout', logout_path, method: :delete %><br/>
-        <%= link_to 'User Page', user_path(current_user) %>
-      <% else %>
-        <%= link_to 'Login', login_path %><br/>
-        <%= link_to 'Sign Up', signup_path %>
-      <% end %>
-    </div>
+  <div id="topnav-stack-ex">
+    <ul class="topnav-stack-ex">
+      <li class="topnav-li">
+        <a href="#">stackExchange</a>
+        <ul class="topnav-stack-ex">
+        <% if logged_in? %>
+          <li class="topnav-li">
+            <%= link_to 'Logout', logout_path, method: :delete, class: "navlink" %><br/>
+          </li>
+          <li class="topnav-li">
+            <%= link_to 'User Page', user_path(current_user), class: "navlink" %>
+          </li>
+        <% else %>
+          <li class="topnav-li">
+            <%= link_to 'Login', login_path, class: "navlink" %><br/>
+          </li>
+          <li class="topnav-li">
+            <%= link_to 'Sign Up', signup_path, class: "navlink" %>
+          </li>
+        <% end %>
+        </ul>
+      </li>
+      <li class="topnav-li">
+        help
+      </li>
+    </ul>
+  </div>
   <div id="navbar">
     <ul>
       <li class="block">
