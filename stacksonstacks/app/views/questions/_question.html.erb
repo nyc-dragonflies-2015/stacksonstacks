@@ -1,6 +1,10 @@
 <li>
   <%= link_to question.title, question_path(question.id) %>
   <br>
+  <br>
+  <%= truncate(question.body, :length => 100, :separator => ' ') %>
+  <br>
+  <br>
   <%= question.answers.count %> Answers
   <br>
   Tagged with:
