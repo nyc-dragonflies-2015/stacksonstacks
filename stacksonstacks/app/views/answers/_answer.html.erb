@@ -1,0 +1,14 @@
+<li class="answeritem">
+  <%= answer.body %>
+  <%= link_to 'edit', edit_answer_path(answer.id) %>
+  <%= link_to 'delete', answer_path(answer.id), method: :delete %>
+  <div>
+    <% answer.comments.each do |comment| %>
+      <li>
+        <%= comment.body %>
+        <%= link_to comment.user.username, user_path(comment.user.id) %>
+      </li>
+    <% end %>
+  </div>
+</li>
+

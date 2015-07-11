@@ -1,0 +1,5 @@
+<%= form_for @answer do |f| %>
+  <%= f.text_area :body, :rows => 10, :cols => 100, value: @answer.body %>
+  <%= f.hidden_field :question_id, value: @answer.question.id %>
+  <%= f.submit "Edit Answer" %>
+<% end %>
