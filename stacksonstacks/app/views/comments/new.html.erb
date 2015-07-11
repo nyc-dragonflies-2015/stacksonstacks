@@ -1,0 +1,7 @@
+<%= form_for @comment do |f| %>
+  <%= f.text_area :body, :rows => 5, :cols => 100 %>
+  <%= f.hidden_field :commentable_id, value: @answer_id %>
+  <%= f.hidden_field :commentable_type, value: "answer" %>
+  <%= f.hidden_field :user_id, value: @id %>
+  <%= f.submit "Add Comment" %>
+<% end %>

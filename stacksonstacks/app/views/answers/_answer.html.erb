@@ -10,8 +10,13 @@
       <%= link_to 'edit', edit_answer_path(answer.id) %>
       <%= link_to 'delete', answer_path(answer.id), method: :delete %>
     <% end %>
+    <%= form_tag('/comments/new', method: :get) do %>
+    <%= hidden_field_tag 'answer_id', answer.id %>
+    <%= submit_tag "add comment" %>
+  <% end %>
   </div>
   <div class="answeritem">
+    <ul>
     <% answer.comments.each do |comment| %>
       <li>
         <%= comment.body %> -
