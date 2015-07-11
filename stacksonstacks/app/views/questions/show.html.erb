@@ -20,19 +20,6 @@
 asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= link_to @question.user.username, user_path(@question.user.id) %>
 <br>
 <br>
-<br>
-<%= form_for @comment do |f| %>
-  <%= f.text_area :body, :rows => 5, :cols => 100 %>
-  <%= f.hidden_field :commentable_id, value: @question.id %>
-  <%= f.hidden_field :commentable_type, value: "question" %>
-  <%= f.hidden_field :user_id, value: @user.id %>
-  <%= f.submit "Add Comment" %>
-<% end %>
-<br>
-<br>
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
 <h4><%= @question.comments.count %> Comments</h4>
 <ul>
 <% @comments.each do |comment| %>
@@ -47,6 +34,19 @@ asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= link_to
 </ul>
 <br>
 <br>
+<br>
+<%= form_for @comment do |f| %>
+  <%= f.text_area :body, :rows => 5, :cols => 100 %>
+  <%= f.hidden_field :commentable_id, value: @question.id %>
+  <%= f.hidden_field :commentable_type, value: "question" %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.submit "Add Comment" %>
+<% end %>
+<br>
+<br>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <h4> <%= @question.answers.count %> Answers</h4>
 <ul>
 <% @answers.each do |answer| %>
