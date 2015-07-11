@@ -17,3 +17,11 @@
   width: 25%;
   padding: 20px;
 }
+
+.answeritem {
+  display: inline-block;
+}
+
+.answerbody {
+  width: 60%;
+}
