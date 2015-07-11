@@ -3,6 +3,38 @@
 <%= @question.body %>
 <br>
 <br>
+<br>
+<% @question.tags.each do |tag| %>
+  Tags: <%= tag.name %>
+<% end %>
+<br>
+<br>
+<% if @question.user.id == session[:user_id] %>
+  <%= link_to "Edit Question", edit_question_path(@question.id) %>
+<% end %>
+<% if @question.user.id == session[:user_id] && @question.answers.empty?%>
+  <%= link_to "Delete Question", question_path(@question.id), method: :delete %>
+<% end %>
+<br>
+<br>
+asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= link_to @question.user.username, user_path(@question.user.id) %>
+<br>
+<br>
+<h4><%= @question.comments.count %> Comments</h4>
+<ul>
+<% @comments.each do |comment| %>
+  <li>
+    <%= comment.body %>
+    <%= link_to comment.user.username, user_path(comment.user.id) %>
+    <%= comment.created_at.strftime("%b %d \'%y at %H:%M") %></li>
+    <% if session[:user_id] == comment.user_id %>
+      <%= link_to "Delete Comment", comment_path(comment.id), method: :delete %>
+    <% end %>
+  </li>
+</ul>
+<br>
+<br>
+<br>
 <%= form_for @comment do |f| %>
   <%= f.text_area :body, :rows => 5, :cols => 100 %>
   <%= f.hidden_field :commentable_id, value: @question.id %>
@@ -15,17 +47,6 @@
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
-<ul>
-<h4><%= @question.comments.count %> Comments</h4>
-<% @comments.each do |comment| %>
-  <li><%= comment.body %></li>
-  <% if session[:user_id] == comment.user_id %>
-    <%= link_to "Delete Comment", comment_path(comment.id), method: :delete %>
-  <% end %>
-<% end %>
-</ul>
-<br>
-<br>
 <h4> <%= @question.answers.count %> Answers</h4>
 <ul>
 <% @answers.each do |answer| %>
