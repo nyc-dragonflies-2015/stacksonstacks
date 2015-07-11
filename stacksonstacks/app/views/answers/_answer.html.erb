@@ -1,13 +1,17 @@
-<li class="answeritem">
-  <%= answer.body %>
-  <%= link_to answer.user.username, user_path(answer.user.id) %>
-  <span> answered <%= answer.created_at.strftime("%b %d \'%y at %H:%M")%></span>
-  <% if user_is_current_user(answer) %>
-    <%= link_to 'edit', edit_answer_path(answer.id) %>
-    <%= link_to 'delete', answer_path(answer.id), method: :delete %>
-  <% end %>
-  <div>
-    <ul>
+<li >
+  <div class="answeritem">
+    <%= render partial: '/votes/vote', locals: {question_answer: answer} %>
+  </div>
+  <div class="answeritem answerbody">
+    <%= answer.body %>
+    <%= link_to answer.user.username, user_path(answer.user.id) %>
+    <span> answered <%= answer.created_at.strftime("%b %d \'%y at %H:%M")%></span>
+    <% if user_is_current_user(answer) %>
+      <%= link_to 'edit', edit_answer_path(answer.id) %>
+      <%= link_to 'delete', answer_path(answer.id), method: :delete %>
+    <% end %>
+  </div>
+  <div class="answeritem">
     <% answer.comments.each do |comment| %>
       <li>
         <%= comment.body %> -
@@ -17,4 +21,5 @@
     <% end %>
     </ul>
   </div>
+
 </li>
