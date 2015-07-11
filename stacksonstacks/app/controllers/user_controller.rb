@@ -19,11 +19,22 @@ class UserController < ApplicationController
     end
   end
 
-  def update
-    @user = User.find_by(id: session)
-    # if @user.authenticate(params[:])
-
+  def edit
+    @user = User.find_by(id: params[:id])
   end
+
+  def update
+    @user = User.find_by(id: session[:user_id])
+    if @user.authenticate(user_params[:password])
+      @user.update(user_params)
+      redirect_to @user
+    else
+      flash[:notice] = "Your password was incorrect"
+      redirect_to :back
+    end
+  end
+
+
 
   private
     def user_params
