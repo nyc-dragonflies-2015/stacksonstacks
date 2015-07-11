@@ -19,6 +19,9 @@
 <h4><%= @question.comments.count %> Comments</h4>
 <% @comments.each do |comment| %>
   <li><%= comment.body %></li>
+  <% if session[:user_id] == comment.user_id %>
+    <%= link_to "Delete Comment", comment_path(comment.id), method: :delete %>
+  <% end %>
 <% end %>
 </ul>
 <br>

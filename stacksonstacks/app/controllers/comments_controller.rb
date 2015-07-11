@@ -15,7 +15,10 @@ class CommentsController < ApplicationController
     end
   end
 
-
+  def destroy
+    Comment.find_by(id: params[:id]).destroy
+    redirect_to :back
+  end
 
   private
     def comment_params
