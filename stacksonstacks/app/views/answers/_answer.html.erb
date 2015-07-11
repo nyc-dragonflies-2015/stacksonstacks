@@ -7,12 +7,15 @@
     <%= link_to 'delete', answer_path(answer.id), method: :delete %>
   <% end %>
   <div>
+    <ul>
     <% answer.comments.each do |comment| %>
       <li>
-        <%= comment.body %>
+        <%= comment.body %> -
         <%= link_to comment.user.username, user_path(comment.user.id) %>
+        <%= comment.created_at.strftime("%b %d \'%y at %H:%M") %>
       </li>
     <% end %>
+    </ul>
   </div>
 </li>
 
