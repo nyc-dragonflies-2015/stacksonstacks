@@ -1,0 +1,16 @@
+<h1>Edit User Form</h1>
+
+<%= form_for @user, method: "put" do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br/>
+  <%= f.label :password %>
+  <%= f.password_field :password %> <br><br>
+  <%= f.submit %>
+<% end %>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<br><br>
+
+<%= link_to "Delete Profile", @user, method: :delete, action: :destroy %>
