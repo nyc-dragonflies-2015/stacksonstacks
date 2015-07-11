@@ -30,12 +30,16 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
-    @comment = Comment.new
-    @comments = @question.comments
-    @answer = Answer.new
-    @answers = @question.answers
-    @user = User.find(session[:user_id])
+    @question = Question.find_by(id: params[:id])
+    if @question == nil
+      redirect_to root_path
+    else
+      @comment = Comment.new
+      @comments = @question.comments
+      @answer = Answer.new
+      @answers = @question.answers
+      @user = User.find(session[:user_id])
+    end
   end
 
   def edit
