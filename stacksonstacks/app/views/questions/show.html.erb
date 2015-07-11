@@ -9,7 +9,12 @@
 <% end %>
 <br>
 <br>
-asked <%= @question.created_at %> by <%= @question.user.username %>
+<% if @question.user.id == session[:user_id] %>
+  <%= link_to "Edit Question", edit_question_path(@question.id) %>
+<% end %>
+<br>
+<br>
+asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= @question.user.username %>
 <br>
 <br>
 <br>
