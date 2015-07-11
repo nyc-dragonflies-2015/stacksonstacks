@@ -6,8 +6,7 @@
     <%=question.answers.count%>
   </div>
   <div class="questionsummary question-title question-group">
-    <%= question.title %>
-    <% # link_to "#{question.title}" , question_path(question) %>
+    <%=  link_to question.title , question_path(question) %>
   </div>
   <div class ="questionsummary question-tags question-group">
     <% question.tags.each do |tag| %>
@@ -18,8 +17,7 @@
   </div>
   <div class ="questionsummary question-user question-group">
     <%= time_ago_in_words(question.created_at) %> ago
-    <%= question.user.username %>
-    <% # link_to "#{question.user.username}" , user_path(question.user) %>
+    <%= link_to "#{question.user.username}" , user_path(question.user) %>
   </div>
 
 
