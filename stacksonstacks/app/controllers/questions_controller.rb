@@ -12,7 +12,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    p params
     @question = Question.new(question_params)
     if @question.save
       tags = params['tags'].split(",").collect(&:strip)
