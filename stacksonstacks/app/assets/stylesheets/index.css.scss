@@ -1,0 +1,106 @@
+/*.question {
+  display: block;
+}
+*/
+/*.questionsummary {
+  display: inline-block;
+}
+*/
+/*.tagindex {
+  display: inline-block;
+  width: 25%;
+  padding: 20px;
+}
+*/
+/*.usersindex {
+  display: inline-block;
+  width: 25%;
+  padding: 20px;
+}
+*/
+
+.question {
+  display: block;
+}
+
+.questionsummary {
+  display: inline-block;
+}
+
+.tagindex {
+  display: inline-block;
+  width: 25%;
+  padding: 20px;
+}
+
+.usersindex {
+  display: inline-block;
+  width: 25%;
+  padding: 20px;
+}
+
+.answeritem {
+  display: inline-block;
+}
+
+.answerbody {
+  width: 60%;
+}
+.questionelement {
+  display: inline-block;
+}
+
+.questionbody {
+  width: 70%;
+}
+
+.questionvote {
+  width: 15%;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#navbar {
+  @include outer-container;
+}
+
+li.block {
+  float: right;
+  background-color: silver;
+  list-style-type: none;
+  padding-right: .5em;
+  padding-left: .5em;
+  padding-top: .1em;
+  margin-right: .15em;
+  height: 1.6em;
+  font-family: 'Helvetica Neue';
+}
+
+.navlink {
+  text-decoration: none;
+  color: white;
+}
+
+.stack-exchange-nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
