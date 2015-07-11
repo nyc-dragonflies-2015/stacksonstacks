@@ -1,9 +1,10 @@
-<h1>User Profile</h1>
+
+<h1>User Profile: <%= @user.username %></h1>
 <p>picture</p>
 
-<% if session[:user_id] %>
+<% if @user.id == session[:user_id] %>
   <%= link_to "Logout", logout_path, method: :delete %>
-  <%= link_to "Update Profile", edit_user_path(current_user) %>
+  <%= link_to "Edit Profile", edit_user_path(current_user) %>
 <% end %>
 <br><br>
 
