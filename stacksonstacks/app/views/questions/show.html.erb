@@ -22,13 +22,7 @@
 <h4> <%= @question.answers.count %> Answers</h4>
 <ul>
 <% @answers.each do |answer| %>
-  <li><%= answer.body %>
-    <ul>
-        <% answer.comments.each do |comment| %>
-        <li> <%= comment.body %> </li>
-        <% end %>
-    </ul>
-  </li>
+  <%= render partial: '/answers/answer', locals: {answer: answer} %>
 <% end %>
 </ul>
 <br>
