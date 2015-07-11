@@ -1,0 +1,11 @@
+<h1>Create a new Comment</h1>
+
+<%= form_for @comment, url: {action: "create"}, html: {method: "post"} do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body %><br/>
+  <%= f.submit %>
+<% end %>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
