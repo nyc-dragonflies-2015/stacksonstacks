@@ -1,7 +1,8 @@
 class UserController < ApplicationController
-
+  before_action :require_login, only: [:edit, :destroy]
   def show
-    @user = User.find_by(id: params[:id] )
+    @user = User.find_by(id: params[:id])
+    redirect_to root_path if @user == nil
   end
 
   def signup
@@ -34,7 +35,12 @@ class UserController < ApplicationController
     end
   end
 
-
+  def destroy
+    @user = User.find_by(id: params[:id])
+    session[:user_id] = nil
+    @user.destroy
+    redirect_to root_path
+  end
 
   private
     def user_params
