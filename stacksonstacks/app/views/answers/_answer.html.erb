@@ -1,7 +1,11 @@
 <li class="answeritem">
   <%= answer.body %>
-  <%= link_to 'edit', edit_answer_path(answer.id) %>
-  <%= link_to 'delete', answer_path(answer.id), method: :delete %>
+  <%= link_to answer.user.username, user_path(answer.user.id) %>
+  <span> answered <%= answer.created_at.strftime("%b %d \'%y at %H:%M")%></span>
+  <% if user_is_current_user(answer) %>
+    <%= link_to 'edit', edit_answer_path(answer.id) %>
+    <%= link_to 'delete', answer_path(answer.id), method: :delete %>
+  <% end %>
   <div>
     <% answer.comments.each do |comment| %>
       <li>
