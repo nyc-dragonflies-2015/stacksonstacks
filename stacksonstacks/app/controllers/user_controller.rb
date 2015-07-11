@@ -6,7 +6,7 @@ class UserController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.order(reputation: :desc)
   end
 
   def signup
