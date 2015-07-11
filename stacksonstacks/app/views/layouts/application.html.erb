@@ -7,21 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="navbar">
-  <div class='navbarlink'><a href="/">Home</a></div>
-  <div class='navbarlink'><a href="/questions">Questions</a></div>
-  <div class='navbarlink'><a href="/tags">Tags</a></div>
-  <div class='navbarlink'><a href="/users">Users</a></div>
-  <div class='navbarlink'><a href="/unanswered">Unanswered</a></div>
-  <div class='navbarlink'><a href="/questions/new">Ask a Question</a></div>
-  <% if logged_in? %>
-    <%= link_to 'Logout', logout_path, method: :delete %><br/>
-    <%= link_to 'User Page', user_path(current_user) %>
-  <% else %>
-    <%= link_to 'Login', login_path %><br/>
-    <%= link_to 'Sign Up', signup_path %>
-
-  <% end %>
+    <div class="stack-exchange-nav">
+      <% if logged_in? %>
+        <%= link_to 'Logout', logout_path, method: :delete %><br/>
+        <%= link_to 'User Page', user_path(current_user) %>
+      <% else %>
+        <%= link_to 'Login', login_path %><br/>
+        <%= link_to 'Sign Up', signup_path %>
+      <% end %>
+    </div>
+  <div id="navbar">
+    <ul>
+      <li class="block">
+        <a class="navlink" href="/">Home</a>
+      </li>
+      <li class="block">
+        <a class="navlink" href="/questions">Questions</a>
+      </li>
+      <li class="block">
+        <a class="navlink" href="/tags">Tags</a>
+      </li>
+      <li class="block">
+        <a class="navlink" href="/users">Users</a>
+      </li>
+      <li class="block">
+        <a class="navlink" href="/unanswered">Unanswered</a>
+      </li>
+      <li class="block last">
+        <a class="navlink" href="/questions/new">Ask a Question</a>
+      </li>
+    </ul>
+  </div>
+  <br>
   </div>
 
 <%= yield %>
