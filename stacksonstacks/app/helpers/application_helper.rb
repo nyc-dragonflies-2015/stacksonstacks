@@ -14,4 +14,9 @@ module ApplicationHelper
     return User.find_by(id: session[:user_id])
   end
 
+  def user_is_current_user(answer_or_question)
+    return true if logged_in? && answer_or_question.user.id == session[:user_id]
+  end
+
+
 end
