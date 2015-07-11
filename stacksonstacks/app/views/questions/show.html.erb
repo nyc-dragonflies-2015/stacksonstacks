@@ -31,6 +31,7 @@ asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= link_to
       <%= link_to "Delete Comment", comment_path(comment.id), method: :delete %>
     <% end %>
   </li>
+<% end %>
 </ul>
 <br>
 <br>
