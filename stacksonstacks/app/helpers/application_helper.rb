@@ -18,5 +18,9 @@ module ApplicationHelper
     return true if logged_in? && answer_or_question.user.id == session[:user_id]
   end
 
+  def vote_count(questionoranswer)
+    return questionoranswer.votes.where(upvote?: true).count - questionoranswer.votes.where(upvote?: false).count
+  end
+
 
 end

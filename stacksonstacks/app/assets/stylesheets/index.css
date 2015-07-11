@@ -17,3 +17,22 @@
   width: 25%;
   padding: 20px;
 }
+
+.answeritem {
+  display: inline-block;
+}
+
+.answerbody {
+  width: 60%;
+}
+.questionelement {
+  display: inline-block;
+}
+
+.questionbody {
+  width: 70%;
+}
+
+.questionvote {
+  width: 15%;
+}
