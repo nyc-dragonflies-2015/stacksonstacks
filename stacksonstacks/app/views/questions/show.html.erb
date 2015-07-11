@@ -12,6 +12,9 @@
 <% if @question.user.id == session[:user_id] %>
   <%= link_to "Edit Question", edit_question_path(@question.id) %>
 <% end %>
+<% if @question.user.id == session[:user_id] && @question.answers.empty?%>
+  <%= link_to "Delete Question", question_path(@question.id), method: :delete %>
+<% end %>
 <br>
 <br>
 asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= @question.user.username %>
