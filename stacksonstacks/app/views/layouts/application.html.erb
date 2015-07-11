@@ -8,10 +8,10 @@
 </head>
 <body>
 <div id="navbar">
-  <div class='navbarlink'><a href="questions">Questions</a></div>
-  <div class='navbarlink'><a href="tags">Tags</a></div>
-  <div class='navbarlink'><a href="users">Users</a></div>
-  <div class='navbarlink'><a href="unanswered">Unanswered</a></div>
+  <div class='navbarlink'><a href="/questions">Questions</a></div>
+  <div class='navbarlink'><a href="/tags">Tags</a></div>
+  <div class='navbarlink'><a href="/users">Users</a></div>
+  <div class='navbarlink'><a href="/unanswered">Unanswered</a></div>
   <div class='navbarlink'><a href="/questions/new">Ask a Question</a></div>
   <% if logged_in? %>
     <%= link_to 'Logout', logout_path, method: :delete %><br/>
