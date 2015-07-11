@@ -3,6 +3,13 @@
 <%= @question.body %>
 <br>
 <br>
+<br>
+<% @question.tags.each do |tag| %>
+  Tags: <%= tag.name %>
+<% end %>
+<br>
+<br>
+<br>
 <%= form_for @comment do |f| %>
   <%= f.text_area :body, :rows => 5, :cols => 100 %>
   <%= f.hidden_field :commentable_id, value: @question.id %>
