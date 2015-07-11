@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
   def index
-    @Tags = order_tags
+    @Tags = Tag.order_tags
   end
 end
