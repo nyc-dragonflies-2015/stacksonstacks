@@ -5,6 +5,10 @@ class UserController < ApplicationController
     redirect_to root_path if @user == nil
   end
 
+  def index
+    @users = User.order(reputation: :desc)
+  end
+
   def signup
     @user = User.new
   end
