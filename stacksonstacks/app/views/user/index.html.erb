@@ -1,8 +1,8 @@
 <h1>Users</h1>
 <div>
   <% @users.each do |user| %>
-
-    Name: <%= user.username %> Reputation: <%= user.reputation %>
-    user.questions
+    <div class="usersindex">
+      Name: <%= user.username %> Reputation: <%= user.reputation %>
+    </div>
   <% end %>
 </div>
