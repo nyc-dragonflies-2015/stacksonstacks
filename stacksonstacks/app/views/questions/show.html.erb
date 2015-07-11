@@ -1,23 +1,36 @@
-<h3> <%= @question.title %> </h3>
-<br>
-<%= @question.body %>
-<br>
-<br>
-<br>
-<% @question.tags.each do |tag| %>
-  Tags: <%= tag.name %>
-<% end %>
-<br>
-<br>
-<% if @question.user.id == session[:user_id] %>
-  <%= link_to "Edit Question", edit_question_path(@question.id) %>
-<% end %>
-<% if @question.user.id == session[:user_id] && @question.answers.empty?%>
-  <%= link_to "Delete Question", question_path(@question.id), method: :delete %>
-<% end %>
-<br>
-<br>
-asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= link_to @question.user.username, user_path(@question.user.id) %>
+<div class="questionwrapper">
+  <h3> <%= @question.title %> </h3>
+  <br>
+  <div class="questionelement questionvote">
+    <%= render partial: '/votes/questionvote', locals: {question_answer: @question} %>
+  </div>
+  <div class="questionelement questionbody">
+    <div class="question">
+      <%= @question.body %>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="question">
+      <% @question.tags.each do |tag| %>
+        Tags: <%= tag.name %>
+      <% end %>
+    </div>
+    <br>
+    <br>
+    <div class="question">
+      <% if @question.user.id == session[:user_id] %>
+        <%= link_to "Edit Question", edit_question_path(@question.id) %>
+      <% end %>
+      <% if @question.user.id == session[:user_id] && @question.answers.empty?%>
+        <%= link_to "Delete Question", question_path(@question.id), method: :delete %>
+      <% end %>
+      <br>
+      <br>
+      asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= link_to @question.user.username, user_path(@question.user.id) %>
+    </div>
+  </div>
+</div>
 <br>
 <br>
 <h4><%= @question.comments.count %> Comments</h4>
