@@ -33,14 +33,17 @@ asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= link_to
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
-<ul>
 <h4><%= @question.comments.count %> Comments</h4>
+<ul>
 <% @comments.each do |comment| %>
-  <li><%= comment.body %></li>
-  <% if session[:user_id] == comment.user_id %>
-    <%= link_to "Delete Comment", comment_path(comment.id), method: :delete %>
-  <% end %>
-<% end %>
+  <li>
+    <%= comment.body %>
+    <%= link_to comment.user.username, user_path(comment.user.id) %>
+    <%= comment.created_at.strftime("%b %d \'%y at %H:%M") %></li>
+    <% if session[:user_id] == comment.user_id %>
+      <%= link_to "Delete Comment", comment_path(comment.id), method: :delete %>
+    <% end %>
+  </li>
 </ul>
 <br>
 <br>
