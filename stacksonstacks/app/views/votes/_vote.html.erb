@@ -3,10 +3,15 @@
     <%= hidden_field_tag 'answer_id', question_answer.id %>
     <%= hidden_field_tag 'upvote?', true %>
     <%= submit_tag "upvote" %>
-  <% end %><br/>
+  <% end %>
+  <br/>
+  <span><%= vote_count(question_answer) %></span>
   <%= form_tag votes_path do %>
     <%= hidden_field_tag 'answer_id', question_answer.id %>
     <%= hidden_field_tag 'upvote?', false %>
     <%= submit_tag "downvote" %>
+  <% end %>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 </div>
