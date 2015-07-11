@@ -25,3 +25,14 @@
 .answerbody {
   width: 60%;
 }
+.questionelement {
+  display: inline-block;
+}
+
+.questionbody {
+  width: 70%;
+}
+
+.questionvote {
+  width: 15%;
+}
