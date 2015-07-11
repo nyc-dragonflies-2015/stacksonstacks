@@ -12,7 +12,11 @@
 <% end %>
 <br>
 <br>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <ul>
+<h4><%= @question.comments.count %> Comments</h4>
 <% @comments.each do |comment| %>
   <li><%= comment.body %></li>
 <% end %>
