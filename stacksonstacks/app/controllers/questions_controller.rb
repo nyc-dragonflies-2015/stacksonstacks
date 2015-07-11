@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
-  #include ApplicationHelper
-  # before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+  include ApplicationHelper
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @questions = Question.all
@@ -12,7 +12,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    # p params
     @question = Question.new(question_params)
     if @question.save
       tags = params['tags'].split(",").collect(&:strip)
@@ -35,9 +34,7 @@ class QuestionsController < ApplicationController
     @comments = @question.comments
     @answer = Answer.new
     @answers = @question.answers
-    # @user = User.find(session[:user_id])
-    # !!!!!!!!  comment form needs this   <%= f.hidden_field :user_id, value: @user.id %>
-    # !!!!!!!!  answer form needs this   <%= f.hidden_field :user_id, value: @user.id %>
+    @user = User.find(session[:user_id])
   end
 
   def edit
