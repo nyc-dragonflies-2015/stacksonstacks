@@ -1,0 +1,41 @@
+<h3> <%= @question.title %> </h3>
+<br>
+<%= @question.body %>
+<br>
+<br>
+<%= form_for @comment do |f| %>
+  <%= f.text_area :body, :rows => 5, :cols => 100 %>
+  <%= f.hidden_field :commentable_id, value: @question.id %>
+  <%= f.hidden_field :commentable_type, value: "question" %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.submit "Add Comment" %>
+<% end %>
+<br>
+<br>
+<ul>
+<% @comments.each do |comment| %>
+  <li><%= comment.body %></li>
+<% end %>
+</ul>
+<br>
+<br>
+<h4> <%= @question.answers.count %> Answers</h4>
+<ul>
+<% @answers.each do |answer| %>
+  <li><%= answer.body %>
+    <ul>
+        <% answer.comments.each do |comment| %>
+        <li> <%= comment.body %> </li>
+        <% end %>
+    </ul>
+  </li>
+<% end %>
+</ul>
+<br>
+<h4> Your Answer </h4>
+<%= form_for @answer do |f| %>
+<%= f.text_area :body, :rows => 10, :cols => 100 %>
+<%= f.hidden_field :question_id, value: @question.id %>
+<%= f.hidden_field :user_id, value: @user.id %>
+<%= f.submit "Post Your Answer" %>
+<% end %>

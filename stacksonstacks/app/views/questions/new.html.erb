@@ -1,0 +1,20 @@
+<%= form_tag ('/questions') do %>
+  Title <%= text_field_tag 'title', '', size: 96, placeholder: "What's your programming question? Be specific." %>
+  <br>
+  <br>
+  <%=text_area_tag 'body', nil, rows: 10, cols: 100 %>
+  <%=hidden_field_tag 'user_id', @id %>
+  <br>
+  <br>
+  <br>
+  Tags <%= text_field_tag 'tags', '', size: 96, placeholder: "Separate tags with commas" %>
+  <br>
+  <br>
+  <%= submit_tag "Post Your Question" %>
+<% end %>
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+<%= form_tag("/questions/#{@question.id}", method: "put") do %>
+  Title <%= text_field_tag 'title', '', size: 96, value: @question.title %>
+  <br>
+  <br>
+  <%=text_area_tag 'body', @question.body, rows: 10, cols: 100 %>
+  <%=hidden_field_tag 'user_id', @id %>
+  <br>
+  <br>
+  <br>
+  Tags <%= text_field_tag 'tags', '', size: 96, value: @tags  %>
+  <br>
+  <br>
+  <%= submit_tag "Edit Your Question" %>
+<% end %>
