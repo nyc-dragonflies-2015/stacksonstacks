@@ -1,0 +1,4 @@
+<h3>Unanswered Questions</h3>
+<% @unanswered_questions.each do |question| %>
+  <%= render :partial => 'questions/question', locals: {:question => question} %>
+<% end %>

@@ -66,4 +66,5 @@ Rails.application.routes.draw do
   resources :user
   get 'users' => 'user#index'
   resources :tags, only: [:index]
+  get 'unanswered' => 'unanswered#index'
 end
