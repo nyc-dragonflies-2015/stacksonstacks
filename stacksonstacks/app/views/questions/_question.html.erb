@@ -1,1 +1,14 @@
-<li> <%= question.title %> </li>
+<li>
+  <%= link_to question.title, question_path(question.id) %>
+  <br>
+  <%= question.answers.count %> Answers
+  <br>
+  Tagged with:
+  <% question.tags.each do |tag| %>
+  <%= link_to tag.name, tag_path(tag.id) %>
+  <% end %>
+  <br>
+  asked <%= question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= link_to question.user.username, user_path(question.user.id) %>
+  <br>
+  <br>
+</li>
