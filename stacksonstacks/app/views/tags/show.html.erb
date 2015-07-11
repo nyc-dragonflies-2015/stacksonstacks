@@ -3,3 +3,9 @@
 <% else %>
   <h2> <%= @tag.questions.count %> questions tagged with <%= @tag.name %>  </h2>
 <% end %>
+<br>
+<ul>
+<% @tag.questions.each do |question| %>
+  <%= render 'questions/question', question:question %>
+<% end %>
+</ul>
