@@ -17,7 +17,7 @@
 <% end %>
 <br>
 <br>
-asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= @question.user.username %>
+asked <%= @question.created_at.strftime("%b %d \'%y at %H:%M") %> by <%= link_to @question.user.username, user_path(@question.user.id) %>
 <br>
 <br>
 <br>
