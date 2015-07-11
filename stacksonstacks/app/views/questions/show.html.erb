@@ -9,6 +9,9 @@
 <% end %>
 <br>
 <br>
+asked <%= @question.created_at %> by <%= @question.user.username %>
+<br>
+<br>
 <br>
 <%= form_for @comment do |f| %>
   <%= f.text_area :body, :rows => 5, :cols => 100 %>
