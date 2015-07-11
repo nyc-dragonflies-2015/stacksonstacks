@@ -58,4 +58,5 @@ Rails.application.routes.draw do
   delete 'logout' => 'session#destroy'
   get 'signup' => 'user#signup'
   resources :user
+  resources :tags, only: [:index]
 end
