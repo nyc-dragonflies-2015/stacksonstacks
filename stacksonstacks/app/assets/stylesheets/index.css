@@ -1,16 +1,13 @@
 .question {
   display: block;
-
 }
-/*
-.questionelement {
 
-  width: 2em;
-
-}
-*/
 .questionsummary {
   display: inline-block;
-
 }
 
+.tagindex {
+  display: inline-block;
+  width: 25%;
+  padding: 20px;
+}

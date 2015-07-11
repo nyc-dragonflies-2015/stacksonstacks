@@ -1,5 +1,6 @@
+require "will_paginate/array"
 class TagsController < ApplicationController
   def index
-    @Tags = Tag.order_tags
+    @tags = Tag.order_tags.paginate(page: params[:page], per_page: 20)
   end
 end
