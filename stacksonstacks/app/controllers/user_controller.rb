@@ -19,6 +19,12 @@ class UserController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by(id: session)
+    # if @user.authenticate(params[:])
+
+  end
+
   private
     def user_params
       params.require(:user).permit(:username, :password)
