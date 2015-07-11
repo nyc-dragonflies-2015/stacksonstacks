@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    p params
     @question = Question.new(question_params)
     if @question.save
       tags = params['tags'].split(",").collect(&:strip)
@@ -22,7 +23,7 @@ class QuestionsController < ApplicationController
           @question.tags.create(name: word)
         end
       end
-        redirect_to questions_path
+        redirect_to question_path(@question.id)
     else
       render :new
     end
@@ -40,6 +41,7 @@ class QuestionsController < ApplicationController
   def edit
     @question = Question.find(params[:id])
     @tags = @question.tags.map { |tag| tag.name }.join(",")
+    @id = session[:user_id]
   end
 
   def update
@@ -47,7 +49,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.question_tags.clear
     @question.assign_attributes(question_params)
-    if @question.update_attributes
+    if @question.update_attributes(question_params)
       tags = params['tags'].split(",").collect(&:strip)
       tags.each do |word|
         if Tag.exists?(name: word)
@@ -56,7 +58,7 @@ class QuestionsController < ApplicationController
           @question.tags.create(name: word)
         end
       end
-        redirect_to questions_path
+        redirect_to question_path(@question.id)
     else
       render :edit
     end
@@ -69,6 +71,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :body, :user_id)
+    params.permit(:title, :body, :user_id)
   end
 end

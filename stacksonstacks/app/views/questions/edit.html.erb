@@ -1,4 +1,4 @@
-<%= form_tag ('/questions') do %>
+<%= form_tag("/questions/#{@question.id}", method: "put") do %>
   Title <%= text_field_tag 'title', '', size: 96, value: @question.title %>
   <br>
   <br>
