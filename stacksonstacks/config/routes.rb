@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   resources :questions
-  resources :tags, only:[:index]
   resources :comments, only:[:new, :create, :destroy, :index]
   resources :tags, only:[:index, :show]
   resources :answers, only: [:index, :create, :destroy, :edit, :update]
@@ -66,6 +65,7 @@ Rails.application.routes.draw do
   get 'signup' => 'user#signup'
   resources :user
   get 'users' => 'user#index'
-  resources :tags, only: [:index]
   get 'unanswered' => 'unanswered#index'
+  post 'questionvotes' => 'votes#questionvotes'
+  post 'answervotes' => 'votes#answervotes'
 end
