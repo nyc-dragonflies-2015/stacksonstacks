@@ -10,7 +10,7 @@
       <%= link_to 'edit', edit_answer_path(answer.id) %>
       <%= link_to 'delete', answer_path(answer.id), method: :delete %>
     <% end %>
-    <%= form_tag('/comments/new', method: :get) do %>
+    <%= form_tag('/comments/new', :class => 'comment_for_answer', method: :get) do %>
     <%= hidden_field_tag 'answer_id', answer.id %>
     <%= submit_tag "add comment" %>
   <% end %>
