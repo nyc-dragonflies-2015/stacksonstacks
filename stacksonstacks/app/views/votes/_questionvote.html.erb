@@ -5,7 +5,7 @@
     <%= submit_tag "upvote" %>
   <% end %>
   <br/>
-  <span><%= vote_count(question_answer) %></span>
+  <span id="questionvotecount"><%= vote_count(question_answer) %></span>
   <%= form_tag questionvotes_path do %>
     <%= hidden_field_tag 'question_id', question_answer.id %>
     <%= hidden_field_tag 'upvote?', false %>
