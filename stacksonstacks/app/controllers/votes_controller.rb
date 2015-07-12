@@ -1,5 +1,4 @@
 class VotesController < ApplicationController
-  layout nil
   def questionvotes
     question = Question.find_by(id: params[:question_id])
     if user_has_made_this_vote(question, params[:question_id])
