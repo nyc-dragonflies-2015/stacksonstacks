@@ -66,6 +66,6 @@ Rails.application.routes.draw do
   resources :user
   get 'users' => 'user#index'
   get 'unanswered' => 'unanswered#index'
-  post 'questionvote' => 'vote#questionvote'
-  post 'answervote' => 'vote#answervote'
+  post 'questionvotes' => 'votes#questionvotes'
+  post 'answervotes' => 'votes#answervotes'
 end
