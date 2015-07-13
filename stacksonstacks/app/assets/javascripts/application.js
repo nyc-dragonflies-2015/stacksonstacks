@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$('document').ready(function(){
+  $('#comment_for_answer').on('submit', function(event){
+    event.preventDefault();
+  })
+})

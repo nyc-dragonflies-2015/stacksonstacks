@@ -1,0 +1,11 @@
+<% if @tag.questions.count == 1 %>
+  <h2> <%= @tag.questions.count %> question tagged with <%= @tag.name %>  </h2>
+<% else %>
+  <h2> <%= @tag.questions.count %> questions tagged with <%= @tag.name %>  </h2>
+<% end %>
+<br>
+<ul>
+<% @tag.questions.each do |question| %>
+  <%= render 'questions/question', question:question %>
+<% end %>
+</ul>

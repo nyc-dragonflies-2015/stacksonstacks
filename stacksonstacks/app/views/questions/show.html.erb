@@ -62,7 +62,7 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 <h4> <%= @question.answers.count %> Answers</h4>
-<ul>
+<ul id = "answers">
 <% @answers.each do |answer| %>
   <%= render partial: '/answers/answer', locals: {answer: answer} %>
 <% end %>
