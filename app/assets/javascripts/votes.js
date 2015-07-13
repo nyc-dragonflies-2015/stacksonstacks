@@ -15,7 +15,7 @@ $(document).ready(function () {
       console.log('not working');
     })
   })
-  $('.answeritem').on('submit', function(event) {
+  $('.answervote').on('submit', function(event) {
     event.preventDefault();
     var $data = $(event.target).serialize();
     var $voteCount = $(event.target).closest('.answeritem').find('#answervotecount');
