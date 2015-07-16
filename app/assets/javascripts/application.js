@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 
+// Code does not go here, if it does nothing remove it.
 $('document').ready(function(){
   $('#comment_for_answer').on('submit', function(event){
     event.preventDefault();

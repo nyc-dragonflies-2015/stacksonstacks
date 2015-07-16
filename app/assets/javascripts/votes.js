@@ -1,9 +1,11 @@
+// Nice work
 $(document).ready(function () {
   $('.questionvote').on('submit', function(event){
     event.preventDefault();
     var $data = $(event.target).serialize();
     var $voteCount = $(event.target).closest('.questionvote').find('#questionvotecount');
     $.ajax({
+      // Url should probably be POST /votes
       url: '/questionvotes',
       method: 'POST',
       data: $data

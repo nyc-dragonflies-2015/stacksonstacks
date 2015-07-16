@@ -1,3 +1,4 @@
+// Remove it if it doesn't do anything
 // $('document').ready(function(){
 //   $('.comment_for_answer').on("submit", function(event) {
 //     event.preventDefault();
