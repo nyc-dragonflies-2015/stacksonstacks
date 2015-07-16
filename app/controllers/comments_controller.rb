@@ -11,6 +11,8 @@ class CommentsController < ApplicationController
     @answer_id = params["answer_id"]
   end
 
+  # See Wed. night lecture comments.  We can clean this up by extracting
+  # private methods to help clean things up.
   def create
     @comment = Comment.new(comment_params)
     if comment_params[:commentable_type] == "question"

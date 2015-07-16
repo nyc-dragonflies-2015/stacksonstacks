@@ -1,4 +1,7 @@
 class VotesController < ApplicationController
+  # Seems like we could clean this up a good bit.  Nevertheless, I like your
+  # creation of helper methods such as the misspelled
+  # user_previosly_voted_differently, etc.
   def questionvotes
     question = Question.find_by(id: params[:question_id])
     if user_has_made_this_vote(question, params[:question_id])
@@ -50,6 +53,8 @@ class VotesController < ApplicationController
 
   def user_has_made_this_vote(questionoranswer, upvote)
     vote = questionoranswer.votes.find_by(user_id: current_user.id)
+    # The return value of vote && (vote.upvote? == upvote) is true false, you
+    # don't need to explicitly return it.
     return true if vote && vote.upvote? == upvote
   end
 
